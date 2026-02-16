@@ -4,7 +4,6 @@ import Users from './Users'
 
 function App() {
   const [search, setSearch] = useState('')
-    const [found, setFound] = useState('')
 
 
 
@@ -25,7 +24,7 @@ function handleSubmit(formdata){
 <input type="text" placeholder='Enter your last Name' name='lname'/>
     <button>Greet Me</button>
     </form>
-    <Users/>
+    <Users search={search} setFind={setSearch}/>
     </>
   )
 }

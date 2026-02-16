@@ -1,12 +1,16 @@
  export const users=[
-	{
+		{
 		id: 1,
-		setup: "What's the best thing about a Boolean?",
-		punchline: "Even if you're wrong, you're only off by a bit"
+		name: 'Khadija',
+		email: "hfije@gmail"
 	},
-	{
+{
 		id: 2,
-		setup: "Why do programmers wear glasses?",
-		punchline: "Because they need to C#"
+		name: 'saiya',
+		email: "say@gmail"
+	},	{
+		id: 3,
+		name: 'William',
+		email: "will@gmail"
 	}
 ]
