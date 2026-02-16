@@ -1,0 +1,34 @@
+main{
+    width: 400px;
+    height: 550px;
+    background-color: rgb(147, 150, 153);
+    display: flex;
+    font-size: 1.5em;
+}
+.leftside{
+    flex:3;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: repeat(5,1fr);       
+
+}
+.rightside{
+    flex: 1;
+    display: grid;
+    grid-template-columns:repeat(1,1fr);
+        grid-template-rows:repeat(5,1fr);
+
+
+
+}
+.rightside >button{
+    color: white;
+    background-color: orange;
+}
+.leftside #zero{
+    grid-column: span 2;
+}
+button{
+    font-size: larger;
+}
+
