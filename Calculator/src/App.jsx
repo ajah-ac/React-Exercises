@@ -7,6 +7,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <>
+    <div className='displayArea'> here goes the solution</div>
     <main >
       <div className='leftside'>
      <button  >AC </button>
@@ -42,6 +44,7 @@ function App() {
 
 
     </main>
+    </>
   )
 }
 
