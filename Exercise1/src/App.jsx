@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0)
 //Exercise 1:To capture user clicks:button,alert
 //Exercise 2 :Map through a list and render the elements
-//Exercise 3:Map Through A List And Rendering (With A Custom Component)
+//Exercise 3:MapThrough A List And Rendering (With A Custom Component)
 
   const [animal, setAnimal] = useState()
 
