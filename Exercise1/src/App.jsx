@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Lists from './List'
 
 function App() {
   const [count, setCount] = useState(0)
 //Exercise 1:To capture user clicks:button,alert
 //Exercise 2 :Map through a list and render the elements
+//Exercise 3:Map Through A List And Rendering (With A Custom Component)
+
   const [animal, setAnimal] = useState()
 
 const animals=['dog', 'cat', 'chicken', 'cow', 'sheep', 'horse']
@@ -23,6 +24,7 @@ function handleClick(){
     <>
 <button onClick={handleClick}> Click me!</button>
 <ul>{listAnimals}</ul>
+<Lists items={animals}/>
     </>
   )
 }
