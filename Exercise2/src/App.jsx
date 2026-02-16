@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import Users from './Users'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState('')
+    const [found, setFound] = useState('')
+
 
 
 //Exercise 1:Building form data
@@ -22,6 +25,7 @@ function handleSubmit(formdata){
 <input type="text" placeholder='Enter your last Name' name='lname'/>
     <button>Greet Me</button>
     </form>
+    <Users/>
     </>
   )
 }
