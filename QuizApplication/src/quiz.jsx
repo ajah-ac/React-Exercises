@@ -12,6 +12,9 @@ export default function Quiz() {
 
 
       function handleSubmit(e) {
+        if(!answers) {
+            alert('Please Select an answer to move to the next question')
+        return }
         e.preventDefault()
 if(answers===formdata.answer){
     setScore(score+1)
@@ -24,12 +27,12 @@ setTrigger(trigger+1)
     return (
 <form onSubmit={handleSubmit} className='forms' >
 { trigger < questions.length ?
-         <><h1>Question {formdata.id}</h1>
-            <h2>{formdata.question}</h2>
+         <>
             <div>
-
+<h1>Question {formdata.id}</h1>
+            <h2>{formdata.question}</h2>
                 {/* for the answer Options */}
-                {formdata.options.map((item, index) =>
+                <p className='options'>{formdata.options.map((item, index) =>
                 (<label key={index}>
                     <input
                         type='radio'
@@ -39,9 +42,10 @@ setTrigger(trigger+1)
                         onChange={e=>setAnswer(e.target.value)} />
                     {item}
                 </label>))}
+                </p>
 
             </div>
-            <button onClick={handleSubmit}> GetNextguestion</button>
+            <button onClick={handleSubmit}>Next Question </button>
             /</>:(<h1 id='totalscore'>You scored {score}/{questions.length}</h1>)
             }
             
