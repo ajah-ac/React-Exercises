@@ -5,32 +5,45 @@ import './App.css'
 
 function App() {
   const [display, setDisplay] = useState('')
-  const [storedval,setStored]=useState(null)
-  const [operator, setOperator]=useState(null)
+  const [storedval, setStored] = useState(null)
+  const [operator, setOperator] = useState(null)
   function handleNumber(val) {
     if (val == 'ax') { setDisplay('') }
     else if (val === '.' || !isNaN(val)) {
       setDisplay(prev => prev + val)
     }
   }
-  function handleOperator(ops){
-setStored(Number(display))
-setDisplay('')
-setOperator(ops)
-  
-}
-function handleEquals(){
-  if(display==='' || storedval===null)return 
-  let result;
-  if(operator==='+')result=storedval + Number(display)
-  else if(operator==='-')result=storedval -Number(display)
-else if(operator==='x')result=storedval * Number(display)
-else if(operator==='/')result=storedval / Number(display)
 
-  setDisplay(result.toString())
-  setStored(null)
-  setOperator(null)
-}
+
+  function calculate(a, b, ops) {
+    if (ops === "+") return a + b
+    if (ops === "-") return a - b
+    if (ops === "/") return a / b
+    if (ops === "x") return a * b
+
+
+  }
+  function handleOperator(oper) {
+        if (display === '' ) return
+  const current=Number(display)
+  if(storedval!==null && operator!==null){
+    const result=calculate(storedval,current,operator)
+    setStored(result)
+  }
+  else{
+setStored(current)}
+    setDisplay('')
+    setOperator(oper)
+
+  }
+  function handleEquals() {
+    if (display === '' || storedval === null) return
+    const result=calculate(storedval,Number(display),operator)
+
+    setDisplay(result.toString())
+    setStored(null)
+    setOperator(null)
+  }
 
 
 
@@ -71,7 +84,7 @@ else if(operator==='/')result=storedval / Number(display)
           <button onClick={() => { handleOperator('x') }}>  X </button>
           <button onClick={() => { handleOperator('-') }}>  - </button>
           <button onClick={() => { handleOperator('+') }}> + </button>
-          <button onClick={ handleEquals}> = </button>
+          <button onClick={handleEquals}> = </button>
 
 
 

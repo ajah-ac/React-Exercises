@@ -12,11 +12,11 @@ main{
 }
 .displayArea{
         width: 400px;
-    height: 50px;
+    height: 70px;
     background-color: rgb(115, 116, 117);
-    font-size: 1.5em;
+    font-size: 3em;
     border: 1 solid black;
-
+color: white;
     display: flex;
     justify-content: flex-end;
     align-items: end;
