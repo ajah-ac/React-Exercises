@@ -9,9 +9,11 @@ function App() {
   const [operator, setOperator] = useState(null)
   function handleNumber(val) {
     if (val == 'ax') { setDisplay('') }
+    if(storedval!==null)setDisplay(val)
     else if (val === '.' || !isNaN(val)) {
       setDisplay(prev => prev + val)
     }
+
   }
 
 
@@ -29,10 +31,12 @@ function App() {
   if(storedval!==null && operator!==null){
     const result=calculate(storedval,current,operator)
     setStored(result)
+    setDisplay(result)
   }
   else{
-setStored(current)}
-    setDisplay('')
+setStored(current)
+setDisplay('')
+}
     setOperator(oper)
 
   }
