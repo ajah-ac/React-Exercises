@@ -19,6 +19,40 @@
   background-color:white;
   border: 0;
 }
-body{
-  padding-top:100px;
+
+.displayfm{
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  font-size: 2em;
+  border-bottom:1px solid rgb(158, 154, 154);
 }
+.displayfm > input{
+  align-self: center;}
+  .displayfm > button{
+  align-self: center;
+
+}
+.displayfm > button{
+  border-radius: 100%;
+  background-color: rgb(235, 229, 229);
+  padding: 20px;
+  border:0;
+  outline: none;
+}
+.displayfm > label{
+  color: gray; 
+  width: 500px; text-align: start;
+  padding-left: 10px;
+}
+main{
+    padding-top:100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+

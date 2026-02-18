@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import {useState } from 'react'
 import plussign from './assets/plussign.png'
 import './App.css'
+import DisplayItems from './displayItems'
 
 function App() {
-  const [todo, setTodo] = useState('')
+  const [task,setTask]=useState('');
+  const [todos,setTodos]=useState([])
 
-  return (
-    <>
-    
+  function handleSubmit(e){
+e.preventDefault()
+setTask('')
+setTodos(prev=>[...prev,task])
+console.log(task)
+  }
 
-    <form action="" className='forms'>
-<input type="text" name='search' placeholder='Add todo...
-' />
-<button > <img src={plussign} alt="" /></button>
+function handleDelete(deltodo){
+  setTodos(todos.filter((_,index)=>deltodo!==index))
+}
 
-    </form>
+
+return (
+  <main>
+<form action="" onSubmit={handleSubmit}className='forms'>
+<input type="text" placeholder='Add todo...' onChange={(e)=>setTask(e.target.value)} />
+<button> <img src={plussign} alt="" />  </button>
+</form>
+
 <div>
-  
+{ todos.map((todo,index)=>(<DisplayItems key={index} task={todo} delete={()=>handleDelete(index)}/>))}
+
+
 </div>
 
 
-
-
-    </>
+    </main>
   )
 }
 
