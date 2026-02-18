@@ -37,9 +37,13 @@ transform-style: preserve-3d;
 
 
 .fc-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: white;
+  color: black;
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
 }
 
 .fc-front >img{
@@ -66,8 +70,24 @@ transform-style: preserve-3d;
     gap: 30px;
     justify-content: space-around;
     
-
+padding: 50px;
 }
 body{
   background-color: #E1F6DC;
+
+}
+main{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  width: 200px;
+  height: 50px;
+border-radius:10px ;
+background-color: rgb(183, 225, 225);
+color: black;
+box-shadow: 5px 5px 10px gray;
+border: 0;
 }

@@ -18,7 +18,6 @@ export default function Cards(props) {
 </li>
 <li>Phone:{props.phone}
 </li>
-
 </ul>
                 </div>
 
