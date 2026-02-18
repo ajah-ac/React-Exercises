@@ -6,13 +6,20 @@ export default function Cards(props) {
             <div className='fc-inner'>
                 <div className='fc-front'>
                     <img src={props.imgs} alt="" />
-                    <div>
-                        <h1>{props.name}</h1>
-                        <h3>{props.occupation}</h3>
+                    <div className='names'>
+                        <h4>{props.name}</h4>
+                        <span>{props.occupation}</span>
                     </div>
                 </div>
                 <div className='fc-back'>
-                    back information
+<ul>
+<li>Age:{props.age}</li>
+<li>Gender:{props.gender}
+</li>
+<li>Phone:{props.phone}
+</li>
+
+</ul>
                 </div>
 
             </div>
