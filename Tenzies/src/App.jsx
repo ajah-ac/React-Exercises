@@ -5,6 +5,7 @@ import './App.css'
 import Die from './Die'
 import { nanoid } from "nanoid"
 
+import Confetti from 'react-confetti'
 function App() {
   const [values, setValues] = useState(generateNew)
   function generateNew() {
@@ -16,12 +17,12 @@ function App() {
       }
     })
   }
-  const gameWon=(arr)=>arr.every(die=>die.isHeld) && arr.every(die=>die.value===arr[0].value)
+  const gameWon=values.every(die=>die.isHeld) && values.every(die=>die.value===values[0].value)
 
   
   function handleRoll(){
   
-    setValues(prev=>gameWon(values)?generateNew() :prev.map(die=>die.isHeld?die:{...die,value: Math.ceil(Math.random() * 6)}))
+    setValues(prev=>gameWon?generateNew() :prev.map(die=>die.isHeld?die:{...die,value: Math.ceil(Math.random() * 6)}))
   }
 
 function hold(id){//works 
@@ -40,9 +41,9 @@ function hold(id){//works
 
       <div className='dice'>
        {values.map(die=>(< Die key={die.id} value={die.value} hold={hold} held={die.isHeld} id={die.id}/>))}
-
+{ gameWon && <Confetti/>}
       </div>
-      <button onClick={handleRoll}>{gameWon(values)?'New Game':'Roll'}</button>
+      <button onClick={handleRoll}>{gameWon?'New Game':'Roll'}</button>
     </main>
   )
 }
