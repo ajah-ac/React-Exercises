@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Die from './Die'
 import { nanoid } from "nanoid"
-
 import Confetti from 'react-confetti'
+
 function App() {
   const [values, setValues] = useState(generateNew)
   function generateNew() {
