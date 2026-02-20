@@ -16,11 +16,15 @@ function App() {
       }
     })
   }
+  const gameWon=(arr)=>arr.every(die=>die.isHeld) && arr.every(die=>die.value===arr[0].value)
+
+  
   function handleRoll(){
-    setValues(prev=>prev.map(die=>die.isHeld?die:{...die,value: Math.ceil(Math.random() * 6)}))
+  
+    setValues(prev=>gameWon(values)?generateNew() :prev.map(die=>die.isHeld?die:{...die,value: Math.ceil(Math.random() * 6)}))
   }
 
-function hold(id){//works
+function hold(id){//works 
   console.log(id)
   setValues(prev=>prev.map(die=>die.id===id?{...die,isHeld:!die.isHeld}:die))
 }
@@ -37,9 +41,8 @@ function hold(id){//works
       <div className='dice'>
        {values.map(die=>(< Die key={die.id} value={die.value} hold={hold} held={die.isHeld} id={die.id}/>))}
 
-
       </div>
-      <button onClick={handleRoll}>Roll</button>
+      <button onClick={handleRoll}>{gameWon(values)?'New Game':'Roll'}</button>
     </main>
   )
 }
