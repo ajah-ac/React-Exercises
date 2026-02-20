@@ -1,9 +1,8 @@
 import './App.css'
-
 export default function Die(props){
     return (
         <>
-        <button> {props.value} </button>
+        <button style={{backgroundColor:props.held?'green':'white'}} onClick={()=>props.hold(props.id)}> {props.value} </button>
         
         </>
     )
