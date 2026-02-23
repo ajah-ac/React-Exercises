@@ -1,5 +1,12 @@
 body{
     background-color: rgb(13, 21, 33);
+    color: white;
+}
+.city{
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
 }
 .header {
         background-color: rgb(60, 59, 59);
@@ -21,4 +28,7 @@ outline: none;
     color: #B7B7B7;
     font-size: 1.2em;
 
+}
+h1{
+    font-size: 4em;
 }
