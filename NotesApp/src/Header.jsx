@@ -1,5 +1,5 @@
 
-import { CircleUserRound, Menu } from 'lucide-react'
+import { CircleUserRound, Menu, ShieldUser } from 'lucide-react'
 
 export default function Header(){
     return (<>
@@ -11,7 +11,6 @@ export default function Header(){
                 </div>
 <div className='use-profile'>
         <CircleUserRound color='blue'/>
-
 </div>
     </nav>
     

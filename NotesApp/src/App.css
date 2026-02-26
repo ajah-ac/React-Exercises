@@ -1,17 +1,23 @@
-
-nav{
+nav {
   display: flex;
-justify-content: space-between;
-align-items: center;
-height: 100px;
-padding:0 50px ;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 50px;
 }
-nav >.navbar-part1{
-display: flex;
-justify-content: center;
-align-items: center;gap:20px;}
-.use-profile{
-  background-color:#E7F2FD;
+body{
+  position: relative;
+}
+
+nav>.navbar-part1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.use-profile {
+  background-color: #E7F2FD;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -19,26 +25,138 @@ align-items: center;gap:20px;}
   justify-content: center;
   align-items: center;
 }
-.search-container > form {
 
+.search-container>form {}
 
-}
-.searchForm{
+.searchForm {
   display: flex;
   width: 600px;
   height: 40px;
   border-radius: 10px;
-    background-color: #F1F5F9;
-
+  background-color: #F1F5F9;
   padding: 10px;
   justify-content: flex-start;
-align-items: center;
+  align-items: center;
 }
-.searchForm >input{
+
+.searchForm>input {
   width: 90%;
   height: 35px;
   font-size: 1.2em;
   border: none;
-  outline:none;
+  background-color: #F1F5F9;
+  outline: none;
 
+}
+.categories{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.categories > section > button{
+background-color: white;
+padding-right: 50px;
+  border: none;
+  outline:none;
+}
+.categories >section > button::after{
+  color: gray;
+
+}
+.categories >section > button.clicked::after{
+  color: blue;
+}
+.note-container{
+  background-color: white;
+  width:300px;
+  height:400px;
+  padding-top: 20px;
+   border-radius:10px;
+box-shadow: 1px 1px 10px rgb(198, 194, 194);   
+
+}
+.note-img{
+  width:80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F8FE;
+  height: 50%;
+  margin: auto;
+ border-radius:10px;
+}
+
+.single-note{
+
+  width: 600px;
+  height: 60vh;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
+
+}
+.single-note >input{
+      color: #3e526d;
+   border: none;
+   font-size: 2em;
+   font-weight: bold;
+   color: gray;
+   outline: none;
+
+}
+.single-note > textarea{
+      color: #3e526d;
+  height: 100%;
+  overflow: hidden;
+  font-size:  1.6em;
+  border: none;
+  outline: none;
+}
+.single-note-footer{
+  color: #3e526d;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding:20px;
+border: 0;
+border-top: 0.2px solid rgb(235, 228, 228);
+border-bottom:1px solid rgb(219, 212, 212) ;
+border-radius:0px 0px 10px 10px ;
+margin-top: 20px;
+box-shadow: 1p;
+
+}
+.note-nav{
+  border: 0;
+border-bottom: 0.2px solid rgb(235, 228, 228);
+border-top:1px solid rgb(219, 212, 212) ;
+border-radius:10px 10px 0px 0px ;
+margin-top: 20px;
+box-shadow: 1p;
+}
+.writting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+gap: 50px;
+
+}
+.imaging{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+gap: 50px;
+
+}
+.addBtn{
+  background-color: #137FEC;
+  padding: 20px;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  position: sticky;
+  top: 0;
+  left: 800px;
 }
