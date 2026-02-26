@@ -7,6 +7,9 @@ nav {
 }
 body{
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 nav>.navbar-part1 {
@@ -26,7 +29,10 @@ nav>.navbar-part1 {
   align-items: center;
 }
 
-.search-container>form {}
+.search-container{
+  display: flex;
+justify-content: center;
+align-items: center;}
 
 .searchForm {
   display: flex;
@@ -66,14 +72,22 @@ padding-right: 50px;
 .categories >section > button.clicked::after{
   color: blue;
 }
+.notes-section{
+display:flex ; flex-wrap: wrap;
+gap: 1rem;
+padding: 1rem;
+}
 .note-container{
+
   background-color: white;
-  width:300px;
-  height:400px;
-  padding-top: 20px;
+  width:250px;
+  height:350px;
+    padding: 5px;
+border: 0;
+outline: none;
+padding-top: 20px;
    border-radius:10px;
 box-shadow: 1px 1px 10px rgb(198, 194, 194);   
-
 }
 .note-img{
   width:80%;

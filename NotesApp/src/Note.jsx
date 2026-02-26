@@ -1,18 +1,33 @@
 import './App.css'
-import { Ellipsis, Image, Italic, List, ListCheck, ListChecks, PenLine, X } from 'lucide-react'
+import { useState } from 'react'
+import { Ellipsis, Image, Italic, List,ListChecks, PenLine, X } from 'lucide-react'
 export default function Note(props) {
+    const [title, setTitle] = useState('')
+    const [text, setText] = useState('')
     const date = new Date()
     const fullDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-    return (<>
+   function handleSubmit(e){
+e.preventDefault()
+   }
+   function saved(){
+props.setNewNote(prev=>[...prev,{title:title,text:text}])
+setTitle('')
+setText('')
+   }
+   return (<>
         <nav className='note-nav'>
             <X />
             <h1>New Note</h1>
-            <h1 style={{ color: 'blue' }}>Save</h1>
+            <button style={{ color: 'blue' }} onClick={saved}>Save</button>
         </nav>
-        <form action="" className='single-note'>
-            <input type="text" placeholder="Note Title" />
+        <form action="" className='single-note' onSubmit={handleSubmit}>
+            <input type="text"
+                placeholder="Note Title"
+                onChange={(e) => setTitle(e.target.value)} />
             {fullDate}
-            <textarea name="" id="" placeholder="Start typing your thoughts...">
+            <textarea name="" id=""
+                placeholder="Start typing your thoughts..."
+                onChange={(e) => setText(e.target.value)}>
             </textarea>
         </form>
         <footer className='single-note-footer'>
@@ -22,7 +37,7 @@ export default function Note(props) {
                 <ListChecks />
                 <List />
             </div>
-            <div className='imaging'> 
+            <div className='imaging'>
                 <Image />
                 <PenLine />
                 <Ellipsis />
