@@ -6,6 +6,7 @@ import Categories from './Categories'
 import Notes from './Notes'
 import Note from "./Note";
 import { Plus } from 'lucide-react'
+import { Route,Routes } from 'react-router'
 
 function App() {
   const [notes,setNotes]=useState([])
@@ -26,7 +27,14 @@ function App() {
 
 {add &&  <Note setNewNote={setNotes} />}
 
-    </>
+
+
+
+<Routes>
+  <Route path='/newnote'></Route>
+  <Route path='/note' element={<Note/>}/>
+</Routes>
+</>
   )
 }
 

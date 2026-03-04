@@ -1,33 +1,18 @@
 import { Fragment } from "react"
 import { useRef } from "react"
+import { Link, NavLink } from "react-router"
 
 export default function Categories(){
     const buttonRef=useRef(null)
-    const handleClick=()=>{
-        if(buttonRef.current){
-            buttonRef.current.classList.toggle('clicked')
-        }
-    }
 return(
 <section  className="categories">
- <section>
-    <button ref={buttonRef} onClick={handleClick}>
 
-<h1>            All Notes
-</h1>    </button>
-        <button>
-        
-            <h1>Work</h1>
-    </button>    <button>
-        <h1>
-            Personal </h1>
-    </button>   
-     <button>
-        <h1>
-            Ideas</h1>
-    </button>
-    </section>   
-
+<ul className="categories">
+     <li><NavLink to='/note' className="link">All notes </NavLink></li>
+ <li ><NavLink to='/note/work' className="link">Work</NavLink></li>
+ <li ><NavLink to='/note/personal' className='link'>Personal</NavLink> </li>
+ <li ><NavLink to='/note/ideas' className='link'>Ideas</NavLink></li>
+ </ul>
 
 </section>)
 }
