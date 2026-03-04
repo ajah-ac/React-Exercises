@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => { setDebounced(inputVal) }, 400)
+    console.log(debounce)
     return () => clearTimeout(timer)
   }, [inputVal])
 
