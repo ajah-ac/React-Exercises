@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { useRef } from "react"
-import { Link, NavLink } from "react-router"
+import { Link, NavLink, Outlet } from "react-router"
 
 export default function Categories(){
     const buttonRef=useRef(null)
@@ -13,6 +13,6 @@ return(
  <li ><NavLink to='/note/personal' className='link'>Personal</NavLink> </li>
  <li ><NavLink to='/note/ideas' className='link'>Ideas</NavLink></li>
  </ul>
-
+<Outlet/>
 </section>)
 }

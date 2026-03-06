@@ -25,14 +25,19 @@ function App() {
   <Plus size={48}/>
 </button>
 
-{add &&  <Note setNewNote={setNotes} />}
 
 
 
 
 <Routes>
-  <Route path='/newnote'></Route>
-  <Route path='/note' element={<Note/>}/>
+  <Route path='/' element={<h1>hi</h1>}></Route>
+  <Route path='/newnote' element={add && <Note setNote={setNotes} />}/>
+  <Route path='/note' element={<Note/>}>
+  <Route path='work' element={<Note/>}/>
+  <Route path='personal' />
+  <Route path='ideas'/>
+  </Route>
+
 </Routes>
 </>
   )
