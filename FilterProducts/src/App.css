@@ -1,0 +1,16 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product-list div{
+ max-width: 200px;
+ max-height: 300px;
+ gap: 20px;
+}
+.product-list >li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:5px;
+}

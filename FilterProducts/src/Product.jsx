@@ -4,12 +4,12 @@ const Product = ({title,price,image}) => {
   return (
 
     <> <div>
-        <h1>Title:{title}</h1>
+        <h4>Product:{title}</h4>
         <span>Price:{price}</span>
 
         </div> 
         <div> 
-            <img src={image}alt="" style={{width:'200px'}} />
+            <img src={image} alt={title} style={{width:'200px'}} />
         </div>
     </>
   )
